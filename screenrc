@@ -1,0 +1,7 @@
+#disable screen freezing
+bind s
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{wk}%{kW}|%{-} {%{Yk}%D %m-%d-%y%{-} %{Wk}%C%a%{-}} {%{Gk}%H%{-} %l} %{kW}|%{-}%{wb} %-w %{Wr}[%n %t]%{-} %+w%=%{kW}|%{-}"
+startup_message off
+
