@@ -36,11 +36,9 @@ C_BG_PURPLE="\[\033[45m\]"
 C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
-export PROMPT_COMMAND='PS1="\
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-\`if [[ \$? != "0" ]]; then echo $C_RED; else echo $C_GREEN; fi\`\
-[\`if [[ `pwd|wc -c|tr -d " "` > 50 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$$C_DEFAULT "'
+export PROMPT_COMMAND='PS1="\`if [[ \$? != "0" ]]; then echo $C_RED; else echo $C_GREEN; fi\`[\`if [[ `pwd|wc -c|tr -d " "` > 50 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$$C_DEFAULT "'
 
 path_add /usr/local/sbin
 path_add /usr/local/bin
