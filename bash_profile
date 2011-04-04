@@ -1,7 +1,7 @@
 # Commands
-# Adds a directory to $PATH, but only if it isn't already present.
-# http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there/39995#39995
 path_add() {
+    # Adds a directory to $PATH, but only if it isn't already present.
+    # http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there/39995#39995
     if [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="$PATH:$1"
     fi
