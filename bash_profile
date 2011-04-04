@@ -36,12 +36,17 @@ C_BG_PURPLE="\[\033[45m\]"
 C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
+# Prompt
+set_exit_color() {
+	if [[ $? != "0" ]]; then EXITCOLOR=$C_RED; else EXITCOLOR=$C_GREEN; fi
+}
 MAX_WD_LENGTH="50"
 
+export PROMPT_COMMAND='set_exit_color;PS1="${EXITCOLOR}[$(if (( $(pwd|wc -c|tr -d " ") > $MAX_WD_LENGTH )); then echo "\\W"; else echo "\\w"; fi)$C_YELLOW$(__git_ps1)${EXITCOLOR}]$C_DEFAULT "'
+
+# Set options
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-export PROMPT_COMMAND='PS1="$(if [[ $? != "0" ]]; then echo $C_RED; else echo $C_GREEN; fi)[$(if (( $(pwd|wc -c|tr -d " ") > $MAX_WD_LENGTH )); then echo "\\W"; else echo "\\w"; fi)]$C_DEFAULT "'
-
 path_add /usr/local/sbin
 path_add /usr/local/bin
 path_add ~/Applications/bin
