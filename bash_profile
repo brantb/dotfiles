@@ -5,7 +5,7 @@ path_add() {
         PATH="$PATH:$1"
     fi
 }
-command_exists() {
+_command_exists() {
   type "$1" &> /dev/null ;
 }
 
@@ -37,12 +37,12 @@ C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
 # Prompt
-set_exit_color() {
+_set_exit_color() {
 	if [[ $? != "0" ]]; then EXITCOLOR=$C_RED; else EXITCOLOR=$C_GREEN; fi
 }
 MAX_WD_LENGTH="50"
 
-export PROMPT_COMMAND='set_exit_color;PS1="${EXITCOLOR}[$(if (( $(pwd|wc -c|tr -d " ") > $MAX_WD_LENGTH )); then echo "\\W"; else echo "\\w"; fi)$C_YELLOW$(__git_ps1)${EXITCOLOR}]$C_DEFAULT "'
+export PROMPT_COMMAND='_set_exit_color;PS1="${EXITCOLOR}[$(if (( $(pwd|wc -c|tr -d " ") > $MAX_WD_LENGTH )); then echo "\\W"; else echo "\\w"; fi)$C_YELLOW$(__git_ps1)${EXITCOLOR}]$C_DEFAULT "'
 
 # Set options
 export CLICOLOR=1
@@ -58,7 +58,7 @@ alias cls='clear'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine &"
 
-if command_exists fortune; then
+if _command_exists fortune; then
   fortune
   echo
 fi
