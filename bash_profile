@@ -1,12 +1,10 @@
+# Commands
 # Adds a directory to $PATH, but only if it isn't already present.
 # http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there/39995#39995
 path_add() {
     if [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="$PATH:$1"
     fi
-}
-_command_exists() {
-  type "$1" &> /dev/null ;
 }
 
 # define colors
@@ -36,12 +34,16 @@ C_BG_PURPLE="\[\033[45m\]"
 C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
-# Prompt
+# Internal commands
+_command_exists() {
+  type "$1" &> /dev/null ;
+}
 _set_exit_color() {
 	if [[ $? != "0" ]]; then EXITCOLOR=$C_RED; else EXITCOLOR=$C_GREEN; fi
 }
-MAX_WD_LENGTH="50"
 
+# Prompt
+MAX_WD_LENGTH="50"
 export PROMPT_COMMAND='_set_exit_color;PS1="${EXITCOLOR}[$(if (( $(pwd|wc -c|tr -d " ") > $MAX_WD_LENGTH )); then echo "\\W"; else echo "\\w"; fi)$C_YELLOW$(__git_ps1)${EXITCOLOR}]$C_DEFAULT "'
 
 # Set options
