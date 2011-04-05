@@ -62,7 +62,7 @@ _set_exit_color() {
 
 # Prompt
 MAX_WD_LENGTH="50"
-export PROMPT_COMMAND='_set_exit_color;PS1="${EXITCOLOR}[$(_dir_chomp $(pwd) $MAX_WD_LENGTH)${C_YELLOW}$(__git_ps1)${EXITCOLOR}]${C_DEFAULT} "'
+export PROMPT_COMMAND='_set_exit_color;PS1="${EXITCOLOR}[$(_dir_chomp $(pwd) $MAX_WD_LENGTH)${C_YELLOW}$(__git_ps1)${EXITCOLOR}]\$${C_DEFAULT} "'
 
 # Set options
 export CLICOLOR=1
