@@ -4,4 +4,6 @@ if has("mouse")
 endif
 
 syntax on
+set t_Co=256
+colorscheme zenburn
 
