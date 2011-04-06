@@ -1,3 +1,9 @@
+# If this is a non-interactive shell, return
+if [[ $- != *i* ]]
+then
+  return
+fi
+
 # Commands
 path_add() {
     # Adds a directory to $PATH, but only if it isn't already present.
