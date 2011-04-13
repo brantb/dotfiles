@@ -12,6 +12,10 @@ path_add() {
         PATH="$PATH:$1"
     fi
 }
+mkcd() {
+    dir="$*";
+    mkdir -p "$dir" && cd "$dir";
+}
 
 # define colors
 C_DEFAULT="\[\033[m\]"
