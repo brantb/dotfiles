@@ -5,7 +5,7 @@ then
 fi
 
 # Commands
-path_add() {
+_path_add() {
     # Adds a directory to $PATH, but only if it isn't already present.
     # http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there/39995#39995
     if [[ ":$PATH:" != *":$1:"* ]]; then
@@ -83,9 +83,9 @@ PROMPT_COMMAND='_set_exit_color;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$
 # Set options
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-path_add /usr/local/sbin
-path_add /usr/local/bin
-path_add ~/Applications/bin
+_path_add /usr/local/sbin
+_path_add /usr/local/bin
+_path_add ~/Applications/bin
 
 # Aliases
 alias ls='ls -F'
