@@ -36,12 +36,6 @@ _set_exit_color() {
 	if [[ $? != "0" ]]; then EXITCOLOR=$C_RED; else EXITCOLOR=$C_GREEN; fi
 }
 
-# Commands
-mkcd() {
-    dir="$*";
-    mkdir -p "$dir" && cd "$dir";
-}
-
 # define colors
 C_DEFAULT="\[\033[m\]"
 C_WHITE="\[\033[1m\]"
@@ -86,12 +80,17 @@ _path_add /usr/local/sbin
 _path_add /usr/local/bin
 _path_add ~/Applications/bin
 
-# Aliases
+# Aliases and commands
 alias ls='ls -F'
 alias v='ls -ahl'
 alias cls='clear'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine &"
+mkcd() {
+    dir="$*";
+    mkdir -p "$dir" && cd "$dir";
+}
+
 
 if _command_exists fortune; then
   fortune
