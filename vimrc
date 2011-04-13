@@ -1,4 +1,4 @@
-call pathogen#runtime_append_app_bundles()
+call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 if has("mouse")
@@ -6,7 +6,8 @@ if has("mouse")
 	set mousehide
 endif
 
-syntax on
+syntax enable
 set t_Co=256
-colorscheme zenburn
+set background=dark
+colorscheme solarized
 
