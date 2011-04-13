@@ -1,3 +1,6 @@
+call pathogen#runtime_append_app_bundles()
+call pathogen#helptags()
+
 if has("mouse")
 	set mouse=a
 	set mousehide
