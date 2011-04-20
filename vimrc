@@ -11,9 +11,16 @@ if has("gui_win32")
 else
 	set guifont=Inconsolata:h14
 endif
+if has("gui_running") " gvim/win32 fails to do this automatically
+	set background=light
+else
+	set background=dark
+endif
+
 syntax enable
-set t_Co=256
 colorscheme solarized
+
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
-call togglebg#map("<F5>")
+set t_Co=256
+"call togglebg#map("<F5>")
 
