@@ -20,7 +20,8 @@ endif
 syntax enable
 colorscheme solarized
 
+set laststatus=2
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
-set t_Co=256
+"set t_Co=256
 "call togglebg#map("<F5>")
 
