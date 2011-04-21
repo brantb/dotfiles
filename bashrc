@@ -65,7 +65,7 @@ C_BG_LIGHTGRAY="\[\033[47m\]"
 
 # Prompt
 MAX_WD_LENGTH="50"
-if [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; then
+if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
     PS1_HOSTNAME=
 else
     PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
