@@ -75,7 +75,7 @@ PROMPT_COMMAND='_set_exit_color;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$
 
 # Set options
 export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
+#export LSCOLORS=ExFxCxDxBxegedabagacad
 _path_add /usr/local/sbin
 _path_add /usr/local/bin
 _path_add ~/Applications/bin
