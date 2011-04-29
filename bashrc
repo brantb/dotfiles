@@ -79,6 +79,7 @@ export CLICOLOR=1
 _path_add /usr/local/sbin
 _path_add /usr/local/bin
 _path_add ~/Applications/bin
+export NODE_PATH=/usr/local/lib/node
 
 # Aliases and commands
 alias ls='ls -F'
