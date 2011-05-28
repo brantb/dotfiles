@@ -30,12 +30,16 @@ _dir_chomp () {
     echo "${p[*]}"
 }
 _command_exists() {
-  type "$1" &> /dev/null ;
+    type "$1" &> /dev/null ;
 }
 _set_exit_color() {
-	if [[ $? != "0" ]]; then EXITCOLOR=$C_RED; else EXITCOLOR=$C_GREEN; fi
+    if [[ $? != "0" ]]; then EXITCOLOR=$C_RED; else EXITCOLOR=$C_GREEN; fi
 }
-
+_set_git_prompt_string() {
+    if type -t __git_ps1 &> /dev/null; then
+        PS1_GIT="$(__git_ps1)"
+    fi 
+}
 # define colors
 C_DEFAULT="\[\033[m\]"
 C_WHITE="\[\033[1m\]"
@@ -71,7 +75,7 @@ else
     PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
 fi
 
-PROMPT_COMMAND='_set_exit_color;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}$(__git_ps1)${EXITCOLOR}]\$${C_DEFAULT} "'
+PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
 
 # Set options
 export CLICOLOR=1
@@ -114,16 +118,16 @@ extract () {
 
 # Show the fortune while we set up other things
 if _command_exists fortune; then
-  fortune
-  echo
+    fortune
+    echo
 fi
 
 if [ -f /usr/local/etc/bash_completion ]; then
-  . /usr/local/etc/bash_completion
+    . /usr/local/etc/bash_completion
 elif [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
+    . /etc/bash_completion
 fi
 if _command_exists dircolors; then
-  eval `dircolors ~/.dir_colors`
+    eval `dircolors ~/.dir_colors`
 fi
 
