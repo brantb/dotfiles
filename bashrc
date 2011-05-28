@@ -112,6 +112,7 @@ extract () {
     fi
 }
 
+# Show the fortune while we set up other things
 if _command_exists fortune; then
   fortune
   echo
@@ -121,5 +122,8 @@ if [ -f /usr/local/etc/bash_completion ]; then
   . /usr/local/etc/bash_completion
 elif [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
+fi
+if _command_exists dircolors; then
+  eval `dircolors ~/.dir_colors`
 fi
 
