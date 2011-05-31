@@ -17,7 +17,10 @@ else
 	set background=dark
 endif
 
+set shiftwidth=4
+set tabstop=4
 syntax enable
+filetype plugin indent on
 colorscheme solarized
 
 set laststatus=2
