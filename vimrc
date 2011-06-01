@@ -26,5 +26,5 @@ colorscheme solarized
 set laststatus=2
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 "set t_Co=256
-call togglebg#map("<F5>")
+"call togglebg#map("<F5>")
 
