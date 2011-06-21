@@ -29,5 +29,4 @@ set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 "call togglebg#map("<F5>")
 
 " Save Taskpaper files automatically
-autocmd!
 autocmd BufLeave,FocusLost *.taskpaper w
