@@ -30,3 +30,15 @@ set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 
 " Save Taskpaper files automatically
 autocmd BufLeave,FocusLost *.taskpaper w
+" Run wrapwithtag.vim script when opening html docs (shouldn't this be a
+" filetype plugin? meh.
+autocmd Filetype html,xml,asp runtime scripts/wrapwithtag.vim
+
+if exists("+autochdir")
+	set autochdir " Change to file's current directory automatically
+endif
+
+" so full of hate
+let g:filetype_asa = "aspvbs"
+let g:filetype_asp = "aspvbs"
+
