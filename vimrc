@@ -43,8 +43,8 @@ endif
 let g:filetype_asa = "aspvbs"
 let g:filetype_asp = "aspvbs"
 
-command Entities :call Entities()
-function Entities()
+command! -range=% Entities :<line1>,<line2>call Entities()
+function! Entities()
   silent s/À/\&Agrave;/eg
   silent s/Á/\&Aacute;/eg
   silent s/Â/\&Acirc;/eg
