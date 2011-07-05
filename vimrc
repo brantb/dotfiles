@@ -13,6 +13,7 @@ else
 endif
 if has("gui_running") " gvim/win32 fails to do this automatically
 	set background=light
+	set lines=50 columns=100
 else
 	set background=dark
 endif
