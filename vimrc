@@ -25,7 +25,7 @@ filetype plugin indent on
 colorscheme solarized
 
 set laststatus=2
-set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
+set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}\ %b\ 0x%B
 "set t_Co=256
 "call togglebg#map("<F5>")
 
@@ -107,5 +107,6 @@ function! Entities()
   silent s/ý/\&yacute;/eg
   silent s/þ/\&thorn;/eg
   silent s/ÿ/\&yuml;/eg
+  silent s/’/\&#x92;/eg
 endfunction
 
