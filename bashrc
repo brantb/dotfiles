@@ -87,7 +87,7 @@ export NODE_PATH=/usr/local/lib/node
 
 # Aliases and commands
 alias ls='ls -F'
-alias v='ls -ahl'
+alias v='ls -ahlO'
 alias cls='clear'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine &"
