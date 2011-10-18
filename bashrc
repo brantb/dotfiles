@@ -79,7 +79,7 @@ PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;PS1="${EXITCOLOR}[${PS1_H
 
 # Set options
 export CLICOLOR=1
-#export LSCOLORS=ExFxCxDxBxegedabagacad
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 _path_add /usr/local/sbin
 _path_add /usr/local/bin
 _path_add ~/Applications/bin
