@@ -80,8 +80,7 @@ PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;PS1="${EXITCOLOR}[${PS1_H
 # Set options
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-_path_add /usr/local/sbin
-_path_add /usr/local/bin
+PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
 export NODE_PATH=/usr/local/lib/node
 
