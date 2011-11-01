@@ -116,6 +116,9 @@ extract () {
         echo "'$1' is not a valid file"
     fi
 }
+if _command_exists hub; then
+	`hub alias -s bash`
+fi
 
 # Show the fortune while we set up other things
 if _command_exists fortune; then
