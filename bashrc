@@ -93,6 +93,7 @@ alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/Sc
 alias brewup='brew update && brew upgrade && brew cleanup'
 alias cdf='cd "$(osascript -e "tell application \"Finder\" to if window 1 exists then if target of window 1 as string is not \":\" then get POSIX path of (target of window 1 as alias)")"'
 alias whatismyip='curl http://whatismyip.org/ && echo'
+alias gs='git status'
 mkcd() {
     dir="$*";
     mkdir -p "$dir" && cd "$dir";
