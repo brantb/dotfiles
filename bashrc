@@ -123,8 +123,10 @@ fi
 
 # Show the fortune while we set up other things
 if _command_exists fortune; then
-    fortune
-    echo
+	if [ ${TERM_PROGRAM} != "DTerm" ]; then
+		fortune
+		echo
+	fi
 fi
 
 if [ -f /usr/local/etc/bash_completion ]; then
