@@ -122,11 +122,9 @@ if _command_exists hub; then
 fi
 
 # Show the fortune while we set up other things
-if _command_exists fortune; then
-	if [ ${TERM_PROGRAM} != "DTerm" ]; then
-		fortune
-		echo
-	fi
+if _command_exists fortune && [ "$TERM_PROGRAM" != "DTerm" ]; then
+	fortune
+	echo
 fi
 
 if [ -f /usr/local/etc/bash_completion ]; then
