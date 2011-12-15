@@ -5,15 +5,16 @@ if has("mouse")
 	set mouse=a
 	set mousehide
 endif
-if has("gui_win32")
-	source $VIMRUNTIME/mswin.vim
-	set guifont=Consolas:h10:cANSI
-else
-	set guifont=Inconsolata:h14
-endif
 if has("gui_running") " gvim/win32 fails to do this automatically
-	set background=light
 	set lines=50 columns=100
+	if has("gui_win32")
+		source $VIMRUNTIME/mswin.vim
+		set guifont=Consolas:h10:cANSI
+		set background=dark
+	else
+		set guifont=Inconsolata:h14
+		set background=light
+	endif
 else
 	set background=dark
 endif
