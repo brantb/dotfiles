@@ -50,6 +50,9 @@ endif
 let g:filetype_asa = "aspvbs"
 let g:filetype_asp = "aspvbs"
 
+" key bindings
+map <F4> :NERDTreeToggle<CR>
+
 command! -range=% Entities :<line1>,<line2>call Entities()
 function! Entities()
   silent s/À/\&Agrave;/eg
