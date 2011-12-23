@@ -1,7 +1,6 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-
 [submodule "vim/bundle/css-colors"]
 	path = vim/bundle/css-colors
 	url = https://github.com/skammer/vim-css-color.git
@@ -17,3 +16,9 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim
+[submodule "vim/bundle/vcscommand"]
+	path = vim/bundle/vcscommand
+	url = http://repo.or.cz/r/vcscommand.git

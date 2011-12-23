@@ -54,6 +54,10 @@ let g:filetype_asp = "aspvbs"
 map <F3> :NERDTreeFind<CR>
 map <F4> :NERDTreeToggle<CR>
 
+" Set up taglist keybinds
+map <F5> :TlistToggle<CR>
+let Tlist_Use_Right_Window=1
+
 command! -range=% Entities :<line1>,<line2>call Entities()
 function! Entities()
   silent s/À/\&Agrave;/eg
