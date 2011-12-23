@@ -46,11 +46,12 @@ if exists("+autochdir")
 	set autochdir " Change to file's current directory automatically
 endif
 
-" so full of hate
+" Use aspvbs filetype for .asa and .asp files so we get syntax highlighting
 let g:filetype_asa = "aspvbs"
 let g:filetype_asp = "aspvbs"
 
-" key bindings
+" Set up NERDTree keybinds and plugins
+map <F3> :NERDTreeFind<CR>
 map <F4> :NERDTreeToggle<CR>
 
 command! -range=% Entities :<line1>,<line2>call Entities()
