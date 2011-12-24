@@ -5,17 +5,22 @@ if has("mouse")
 	set mouse=a
 	set mousehide
 endif
-if has("gui_win32")
-	source $VIMRUNTIME/mswin.vim
-	set guifont=Consolas:h10:cANSI
-else
-	set guifont=Inconsolata:h14
-endif
 if has("gui_running") " gvim/win32 fails to do this automatically
-	set background=light
 	set lines=50 columns=100
+	if has("gui_win32")
+		source $VIMRUNTIME/mswin.vim
+		set guifont=Consolas:h10:cANSI
+		set background=dark
+	else
+		set guifont=Inconsolata:h14
+		set background=light
+	endif
 else
 	set background=dark
+endif
+
+if has("win32")
+	cd $HOME " Default cwd is System32, which is stupid
 endif
 
 set shiftwidth=4
@@ -41,9 +46,13 @@ if exists("+autochdir")
 	set autochdir " Change to file's current directory automatically
 endif
 
-" so full of hate
+" Use aspvbs filetype for .asa and .asp files so we get syntax highlighting
 let g:filetype_asa = "aspvbs"
 let g:filetype_asp = "aspvbs"
+
+" Set up NERDTree keybinds and plugins
+map <F3> :NERDTreeFind<CR>
+map <F4> :NERDTreeToggle<CR>
 
 command! -range=% Entities :<line1>,<line2>call Entities()
 function! Entities()
