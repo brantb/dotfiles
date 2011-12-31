@@ -96,6 +96,7 @@ alias whatismyip='curl http://whatismyip.org/ && echo'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
+alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
 
 mkcd() {
     dir="$*";
