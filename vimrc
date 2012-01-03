@@ -42,10 +42,6 @@ autocmd Filetype taskpaper set background=light
 " filetype plugin? meh.)
 autocmd Filetype html,xml,aspvbs runtime scripts/wrapwithtag.vim
 
-if exists("+autochdir")
-	set autochdir " Change to file's current directory automatically
-endif
-
 " Use aspvbs filetype for .asa and .asp files so we get syntax highlighting
 let g:filetype_asa = "aspvbs"
 let g:filetype_asp = "aspvbs"
@@ -53,6 +49,7 @@ let g:filetype_asp = "aspvbs"
 " Set up NERDTree keybinds and plugins
 map <F3> :NERDTreeFind<CR>
 map <F4> :NERDTreeToggle<CR>
+let NERDTreeChDirMode=2 " pwd follows NERDtree
 
 " Set up taglist keybinds
 map <F5> :TlistToggle<CR>
