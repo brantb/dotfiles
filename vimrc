@@ -46,11 +46,12 @@ autocmd Filetype html,xml,aspvbs runtime scripts/wrapwithtag.vim
 let g:filetype_asa = "aspvbs"
 let g:filetype_asp = "aspvbs"
 
-" Set up NERDTree keybinds and plugins
+" Set up NERDTree keybinds and options
 map <F3> :NERDTreeFind<CR>
 map <F4> :NERDTreeToggle<CR>
 let NERDTreeChDirMode=2 " pwd follows NERDtree
 let NERDTreeHijackNetrw=0 " So vcscommand can commit directories
+let NERDTreeIgnore=['^CVS$', '^\.svn$', '\~$']
 
 " Set up taglist keybinds
 map <F5> :TlistToggle<CR>
