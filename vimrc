@@ -50,6 +50,7 @@ let g:filetype_asp = "aspvbs"
 map <F3> :NERDTreeFind<CR>
 map <F4> :NERDTreeToggle<CR>
 let NERDTreeChDirMode=2 " pwd follows NERDtree
+let NERDTreeHijackNetrw=0 " So vcscommand can commit directories
 
 " Set up taglist keybinds
 map <F5> :TlistToggle<CR>
