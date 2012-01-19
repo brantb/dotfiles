@@ -46,6 +46,9 @@ autocmd Filetype html,xml,aspvbs runtime scripts/wrapwithtag.vim
 let g:filetype_asa = "aspvbs"
 let g:filetype_asp = "aspvbs"
 
+" Use Groovy syntax highlighting for gradle buildfiles
+au BufNewFile,BufRead *.gradle setf groovy
+
 " Set up NERDTree keybinds and options
 map <F3> :NERDTreeFind<CR>
 map <F4> :NERDTreeToggle<CR>
