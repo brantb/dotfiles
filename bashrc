@@ -137,6 +137,6 @@ elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 if _command_exists dircolors; then
-    eval `dircolors ~/.dir_colors`
+    eval `dircolors --bourne-shell ~/.dir_colors`
 fi
 
