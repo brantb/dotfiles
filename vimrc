@@ -127,3 +127,7 @@ function! Entities()
   silent s/’/\&#x92;/eg
 endfunction
 
+" for typos
+map :W :w
+map :E :e
+
