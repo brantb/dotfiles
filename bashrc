@@ -140,3 +140,8 @@ if _command_exists dircolors; then
     eval `dircolors --bourne-shell ~/.dir_colors`
 fi
 
+# Run local config
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
+fi
+
