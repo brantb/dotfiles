@@ -23,6 +23,7 @@ if has("win32")
 	cd $HOME " Default cwd is System32, which is stupid
 endif
 
+set number
 set shiftwidth=4
 set tabstop=4
 syntax enable
