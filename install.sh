@@ -22,6 +22,10 @@ ln -s $DOTFILES/screenrc ~/.screenrc
 mv ~/.tmux.conf ~/.tmux.conf.old 2> /dev/null
 ln -s $DOTFILES/tmux.conf ~/.tmux.conf
 
+# dircolors
+mv ~/.dir_colors ~/.dir_colors.old 2> /dev/null
+ln -s $DOTFILES/dircolors/dircolors.ansi-dark
+
 git submodule update --init
 
 
