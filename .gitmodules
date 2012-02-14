@@ -33,3 +33,6 @@
 	path = vim/bundle/vcscommand
 	url = http://repo.or.cz/r/vcscommand.git
 	ignore = untracked
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
