@@ -23,9 +23,13 @@ if has("win32")
 	cd $HOME " Default cwd is System32, which is stupid
 endif
 
-set number
+set number      " Show line numbers
 set shiftwidth=4
 set tabstop=4
+set hlsearch    " Highlight search results
+set smartcase   " Search strings that are all-lowercase will do a case-insensitive search
+set incsearch   " Incremental search
+
 syntax enable
 filetype plugin indent on
 colorscheme solarized
