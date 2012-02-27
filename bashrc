@@ -1,9 +1,3 @@
-# If this is a non-interactive shell, return
-if [[ $- != *i* ]]
-then
-  return
-fi
-
 # Internal commands
 _path_add() {
     # Adds a directory to $PATH, but only if it isn't already present.
@@ -40,7 +34,19 @@ _set_git_prompt_string() {
         PS1_GIT="$(__git_ps1)"
     fi 
 }
-# define colors
+
+# Paths and environment variables for non-interactive shells
+PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
+_path_add ~/Applications/bin
+export NODE_PATH=/usr/local/lib/node
+
+# If this is a non-interactive shell, return
+if [[ $- != *i* ]]
+then
+  return
+fi
+
+# Prompt: define colors
 C_DEFAULT="\[\033[m\]"
 C_WHITE="\[\033[1m\]"
 C_BLACK="\[\033[30m\]"
@@ -67,22 +73,18 @@ C_BG_PURPLE="\[\033[45m\]"
 C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
-# Prompt
+# Prompt: Set variables
 MAX_WD_LENGTH="50"
 if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
     PS1_HOSTNAME=
 else
     PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
 fi
-
 PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
 
-# Set options
+# Environment variables for interactive shells
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
-_path_add ~/Applications/bin
-export NODE_PATH=/usr/local/lib/node
 
 # Aliases and commands
 alias ls='ls -F'
