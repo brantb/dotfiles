@@ -30,6 +30,8 @@ set incsearch   " Incremental search
 nnoremap <CR> :noh<CR><CR>  " Clear search highlight by hitting enter
 
 set number      " Show line numbers
+set foldcolumn=1
+set foldmethod=syntax
 set shiftwidth=4
 set tabstop=4
 set hlsearch    " Highlight search results
