@@ -73,6 +73,14 @@ let NERDTreeIgnore=['^CVS$', '^\.svn$', '\~$']
 map <F5> :TlistToggle<CR>
 let Tlist_Use_Right_Window=1
 
+" Alt-J/K moves lines around
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+inoremap <A-j> <Esc>:m+<CR>==gi
+inoremap <A-k> <Esc>:m-2<CR>==gi
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
+
 command! -range=% Entities :<line1>,<line2>call Entities()
 function! Entities()
   silent s/À/\&Agrave;/eg
