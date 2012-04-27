@@ -51,3 +51,6 @@
 [submodule "vim/bundle/L9"]
 	path = vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
