@@ -37,8 +37,6 @@ _set_git_prompt_string() {
 
 # Paths and environment variables for non-interactive shells
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
-_path_add ~/Applications/bin
-export NODE_PATH=/usr/local/lib/node
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]
