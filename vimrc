@@ -27,7 +27,7 @@ endif
 set hlsearch    " Highlight search results
 set smartcase   " Search strings that are all-lowercase will do a case-insensitive search
 set incsearch   " Incremental search
-nnoremap <CR> :noh<CR><CR>  " Clear search highlight by hitting enter
+nnoremap <silent> <CR> :noh<CR><CR>  " Clear search highlight by hitting enter
 
 set number      " Show line numbers
 set foldcolumn=1
