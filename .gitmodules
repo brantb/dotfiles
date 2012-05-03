@@ -45,12 +45,6 @@
 [submodule "vim/bundle/vim-css3-syntax"]
 	path = vim/bundle/vim-css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax.git
-[submodule "vim/bundle/FuzzyFinder"]
-	path = vim/bundle/FuzzyFinder
-	url = https://github.com/vim-scripts/FuzzyFinder.git
-[submodule "vim/bundle/L9"]
-	path = vim/bundle/L9
-	url = https://github.com/vim-scripts/L9.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -63,3 +57,6 @@
 [submodule "vim/bundle/vim-eunuch"]
 	path = vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
