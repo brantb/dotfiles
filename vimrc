@@ -37,6 +37,7 @@ set tabstop=4
 set hlsearch    " Highlight search results
 set smartcase   " Search strings that are all-lowercase will do a case-insensitive search
 set incsearch   " Incremental search
+set cursorline  " Highlight current line 
 
 syntax enable
 filetype plugin indent on
