@@ -85,3 +85,12 @@ vnoremap <A-k> :m-2<CR>gv=gv
 " for typos
 map :E :e
 
+" <F9> toggles fold under cursor
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+
+" If there is a fold under the cursor, spacebar toggles it as well
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+
