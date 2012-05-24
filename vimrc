@@ -85,6 +85,24 @@ vnoremap <A-k> :m-2<CR>gv=gv
 " for typos
 map :E :e
 
+" Indent guides plugin config
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+" Override the indent guide plugin's color choices based on whether we're
+" using a light or dark background. 
+" This will fail terribly if we toggle the background manually.
+let g:indent_guides_auto_colors = 0
+if &background == "dark"
+	" base02
+	autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#073642 ctermbg=0
+	autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=NONE ctermbg=0
+else
+	" base2
+	autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#eee8d5 ctermbg=7
+	autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#eee8d5 ctermbg=7
+endif
+
 " <F9> toggles fold under cursor
 inoremap <F9> <C-O>za
 nnoremap <F9> za
