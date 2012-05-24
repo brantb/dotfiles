@@ -32,6 +32,7 @@ nnoremap <silent> <CR> :noh<CR><CR>  " Clear search highlight by hitting enter
 set number      " Show line numbers
 set foldcolumn=1
 set foldmethod=syntax
+set foldlevelstart=2
 set shiftwidth=4
 set tabstop=4
 set hlsearch    " Highlight search results
@@ -108,6 +109,11 @@ inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
+" <F10> decreases fold level by one
+inoremap <F10> <C-O>zm
+nnoremap <F10> zm
+onoremap <F10> <C-C>zm
+vnoremap <F10> zm
 
 " If there is a fold under the cursor, spacebar toggles it as well
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
