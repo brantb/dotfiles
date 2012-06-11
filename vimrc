@@ -66,10 +66,11 @@ au BufNewFile,BufRead *.gradle setf groovy
 
 " Set up NERDTree keybinds and options
 map <F3> :NERDTreeFind<CR>
-map <F4> :NERDTreeToggle<CR>
+map <F4> :NERDTreeMirrorToggle<CR>
 let NERDTreeChDirMode=2 " pwd follows NERDtree
 let NERDTreeHijackNetrw=0 " So vcscommand can commit directories
 let NERDTreeIgnore=['^CVS$', '^\.svn$', '\~$']
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 " Set up taglist keybinds
 map <F5> :TlistToggle<CR>
