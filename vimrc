@@ -77,13 +77,19 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 map <F5> :TlistToggle<CR>
 let Tlist_Use_Right_Window=1
 
-" Alt-J/K moves lines around
+" Alt-J/K and Cmd-J/K move lines around
 nnoremap <A-j> :m+<CR>==
+nnoremap <D-j> :m+<CR>==
 nnoremap <A-k> :m-2<CR>==
+nnoremap <D-k> :m-2<CR>==
 inoremap <A-j> <Esc>:m+<CR>==gi
+inoremap <D-j> <Esc>:m+<CR>==gi
 inoremap <A-k> <Esc>:m-2<CR>==gi
+inoremap <D-k> <Esc>:m-2<CR>==gi
 vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <D-j> :m'>+<CR>gv=gv
 vnoremap <A-k> :m-2<CR>gv=gv
+vnoremap <D-k> :m-2<CR>gv=gv
 
 " jj exits insert mode
 inoremap jj <Esc> 
