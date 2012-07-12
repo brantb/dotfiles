@@ -132,3 +132,8 @@ vnoremap <F10> zm
 " If there is a fold under the cursor, spacebar toggles it as well
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 
+" ctrlp plugin config
+let g:ctrlp_custom_ignore = {
+	\ 'dir': 'node_modules\|\.git$\|\.hg$\|\.svn$\|^CVS$'
+	\ }
+
