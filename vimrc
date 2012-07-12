@@ -20,7 +20,7 @@ else
 endif
 
 if has("win32")
-	cd $HOME " Default cwd is System32, which is stupid
+	cd $USERPROFILE " Default cwd is System32, which is stupid
 endif
 
 " Search options
