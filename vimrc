@@ -81,115 +81,105 @@ map <F5> :TlistToggle<CR>
 let Tlist_Use_Right_Window=1
 
 if has("gui_macvim") && has("gui_running")
-  " Map command-[ and command-] to indenting or outdenting
-  " while keeping the original selection in visual mode
-  vmap <D-]> >gv
-  vmap <D-[> <gv
+	" Map command-[ and command-] to indenting or outdenting
+	" while keeping the original selection in visual mode
+	vmap <D-]> >gv
+	vmap <D-[> <gv
 
-  nmap <D-]> >>
-  nmap <D-[> <<
+	nmap <D-]> >>
+	nmap <D-[> <<
 
-  omap <D-]> >>
-  omap <D-[> <<
+	omap <D-]> >>
+	omap <D-[> <<
 
-  imap <D-]> <Esc>>>i
-  imap <D-[> <Esc><<i
+	imap <D-]> <Esc>>>i
+	imap <D-[> <Esc><<i
 
-  " " Bubble single lines
-  " nmap <D-Up> [e
-  " nmap <D-Down> ]e
-  " nmap <D-k> [e
-  " nmap <D-j> ]e
+	" Bubble single lines
+	nmap <D-Up> [e==
+	nmap <D-Down> ]e==
+	nmap <D-k> [e==
+	nmap <D-j> ]e==
+	imap <D-k> <Esc>[e==gi
+	imap <D-j> <Esc>]e==gi
 
-  " Bubble multiple lines
-  " vmap <D-Up> [egv
-  " vmap <D-Down> ]egv
-  " vmap <D-k> [egv
-  " vmap <D-j> ]egv
+	" Bubble multiple lines
+	vmap <D-Up> [e==gv
+	vmap <D-Down> ]e==gv
+	vmap <D-k> [e==gv
+	vmap <D-j> ]e==gv
 
-  nnoremap <D-j> :m+<CR>==
-  nnoremap <D-k> :m-2<CR>==
-  inoremap <D-j> <Esc>:m+<CR>==gi
-  inoremap <D-k> <Esc>:m-2<CR>==gi
-  vnoremap <D-j> :m'>+<CR>gv=gv
-  vnoremap <D-k> :m-2<CR>gv=gv
-
-  " Map Command-# to switch tabs
-  map  <D-0> 0gt
-  imap <D-0> <Esc>0gt
-  map  <D-1> 1gt
-  imap <D-1> <Esc>1gt
-  map  <D-2> 2gt
-  imap <D-2> <Esc>2gt
-  map  <D-3> 3gt
-  imap <D-3> <Esc>3gt
-  map  <D-4> 4gt
-  imap <D-4> <Esc>4gt
-  map  <D-5> 5gt
-  imap <D-5> <Esc>5gt
-  map  <D-6> 6gt
-  imap <D-6> <Esc>6gt
-  map  <D-7> 7gt
-  imap <D-7> <Esc>7gt
-  map  <D-8> 8gt
-  imap <D-8> <Esc>8gt
-  map  <D-9> 9gt
-  imap <D-9> <Esc>9gt
+	" Map Command-# to switch tabs
+	map  <D-0> 0gt
+	imap <D-0> <Esc>0gt
+	map  <D-1> 1gt
+	imap <D-1> <Esc>1gt
+	map  <D-2> 2gt
+	imap <D-2> <Esc>2gt
+	map  <D-3> 3gt
+	imap <D-3> <Esc>3gt
+	map  <D-4> 4gt
+	imap <D-4> <Esc>4gt
+	map  <D-5> 5gt
+	imap <D-5> <Esc>5gt
+	map  <D-6> 6gt
+	imap <D-6> <Esc>6gt
+	map  <D-7> 7gt
+	imap <D-7> <Esc>7gt
+	map  <D-8> 8gt
+	imap <D-8> <Esc>8gt
+	map  <D-9> 9gt
+	imap <D-9> <Esc>9gt
 else
-  " Map command-[ and command-] to indenting or outdenting
-  " while keeping the original selection in visual mode
-  vmap <A-]> >gv
-  vmap <A-[> <gv
+	" Map command-[ and command-] to indenting or outdenting
+	" while keeping the original selection in visual mode
+	vmap <A-]> >gv
+	vmap <A-[> <gv
 
-  nmap <A-]> >>
-  nmap <A-[> <<
+	nmap <A-]> >>
+	nmap <A-[> <<
 
-  omap <A-]> >>
-  omap <A-[> <<
+	omap <A-]> >>
+	omap <A-[> <<
 
-  imap <A-]> <Esc>>>i
-  imap <A-[> <Esc><<i
- 
-  " Bubble single lines
-  " nmap <C-Up> [e
-  " nmap <C-Down> ]e
-  " nmap <C-k> [e
-  " nmap <C-j> ]e
+	imap <A-]> <Esc>>>i
+	imap <A-[> <Esc><<i
 
-  " Bubble multiple lines
-  " vmap <C-Up> [egv
-  " vmap <C-Down> ]egv
-  " vmap <C-k> [egv
-  " vmap <C-j> ]egv
+	" Bubble single lines
+	nmap <A-Up> [e==
+	nmap <A-Down> ]e==
+	nmap <A-k> [e==
+	nmap <A-j> ]e==
+	imap <A-k> <Esc>[e==gi
+	imap <A-j> <Esc>]e==gi
 
-  nnoremap <A-j> :m+<CR>==
-  nnoremap <A-k> :m-2<CR>==
-  inoremap <A-j> <Esc>:m+<CR>==gi
-  inoremap <A-k> <Esc>:m-2<CR>==gi
-  vnoremap <A-j> :m'>+<CR>gv=gv
-  vnoremap <A-k> :m-2<CR>gv=gv
+	" Bubble multiple lines
+	vmap <A-Up> [e==gv
+	vmap <A-Down> ]e==gv
+	vmap <A-k> [e==gv
+	vmap <A-j> ]e==gv
 
-  " Map Control-# to switch tabs
-  map  <C-0> 0gt
-  imap <C-0> <Esc>0gt
-  map  <C-1> 1gt
-  imap <C-1> <Esc>1gt
-  map  <C-2> 2gt
-  imap <C-2> <Esc>2gt
-  map  <C-3> 3gt
-  imap <C-3> <Esc>3gt
-  map  <C-4> 4gt
-  imap <C-4> <Esc>4gt
-  map  <C-5> 5gt
-  imap <C-5> <Esc>5gt
-  map  <C-6> 6gt
-  imap <C-6> <Esc>6gt
-  map  <C-7> 7gt
-  imap <C-7> <Esc>7gt
-  map  <C-8> 8gt
-  imap <C-8> <Esc>8gt
-  map  <C-9> 9gt
-  imap <C-9> <Esc>9gt
+	" Map Control-# to switch tabs
+	map  <C-0> 0gt
+	imap <C-0> <Esc>0gt
+	map  <C-1> 1gt
+	imap <C-1> <Esc>1gt
+	map  <C-2> 2gt
+	imap <C-2> <Esc>2gt
+	map  <C-3> 3gt
+	imap <C-3> <Esc>3gt
+	map  <C-4> 4gt
+	imap <C-4> <Esc>4gt
+	map  <C-5> 5gt
+	imap <C-5> <Esc>5gt
+	map  <C-6> 6gt
+	imap <C-6> <Esc>6gt
+	map  <C-7> 7gt
+	imap <C-7> <Esc>7gt
+	map  <C-8> 8gt
+	imap <C-8> <Esc>8gt
+	map  <C-9> 9gt
+	imap <C-9> <Esc>9gt
 endif
 
 
@@ -237,6 +227,6 @@ autocmd VimEnter,Colorscheme * :call RecolorIndentGuides()
 
 " ctrlp plugin config
 let g:ctrlp_custom_ignore = {
-	\ 'dir': 'node_modules\|\.git$\|\.hg$\|\.svn$\|^CVS$'
-	\ }
+			\ 'dir': 'node_modules\|\.git$\|\.hg$\|\.svn$\|^CVS$'
+			\ }
 
