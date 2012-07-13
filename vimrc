@@ -5,9 +5,10 @@ if has("mouse")
 	set mouse=a
 	set mousehide
 endif
-if has("gui_running") " gvim/win32 fails to do this automatically
+if has("gui_running")
 	set lines=50 columns=100
 	if has("gui_win32")
+		" gvim/win32 fails to do this automatically
 		source $VIMRUNTIME/mswin.vim
 		set guifont=Consolas:h10:cANSI
 		set background=dark
@@ -18,6 +19,8 @@ if has("gui_running") " gvim/win32 fails to do this automatically
 else
 	set background=dark
 endif
+
+set guioptions-=T " Hide toolbar
 
 if has("win32")
 	cd $USERPROFILE " Default cwd is System32, which is stupid
