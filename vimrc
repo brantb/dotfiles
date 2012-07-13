@@ -94,8 +94,9 @@ vnoremap <D-j> :m'>+<CR>gv=gv
 vnoremap <A-k> :m-2<CR>gv=gv
 vnoremap <D-k> :m-2<CR>gv=gv
 
-" jj exits insert mode
+" jj/kk exits insert mode
 inoremap jj <Esc> 
+inoremap kk <Esc>
 
 " for typos
 map :E :e
