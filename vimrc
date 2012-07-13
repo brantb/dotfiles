@@ -108,28 +108,6 @@ if has("gui_macvim") && has("gui_running")
 	vmap <D-Down> ]e==gv
 	vmap <D-k> [e==gv
 	vmap <D-j> ]e==gv
-
-	" Map Command-# to switch tabs
-	map  <D-0> 0gt
-	imap <D-0> <Esc>0gt
-	map  <D-1> 1gt
-	imap <D-1> <Esc>1gt
-	map  <D-2> 2gt
-	imap <D-2> <Esc>2gt
-	map  <D-3> 3gt
-	imap <D-3> <Esc>3gt
-	map  <D-4> 4gt
-	imap <D-4> <Esc>4gt
-	map  <D-5> 5gt
-	imap <D-5> <Esc>5gt
-	map  <D-6> 6gt
-	imap <D-6> <Esc>6gt
-	map  <D-7> 7gt
-	imap <D-7> <Esc>7gt
-	map  <D-8> 8gt
-	imap <D-8> <Esc>8gt
-	map  <D-9> 9gt
-	imap <D-9> <Esc>9gt
 else
 	" Map command-[ and command-] to indenting or outdenting
 	" while keeping the original selection in visual mode
@@ -158,28 +136,6 @@ else
 	vmap <A-Down> ]e==gv
 	vmap <A-k> [e==gv
 	vmap <A-j> ]e==gv
-
-	" Map Control-# to switch tabs
-	map  <C-0> 0gt
-	imap <C-0> <Esc>0gt
-	map  <C-1> 1gt
-	imap <C-1> <Esc>1gt
-	map  <C-2> 2gt
-	imap <C-2> <Esc>2gt
-	map  <C-3> 3gt
-	imap <C-3> <Esc>3gt
-	map  <C-4> 4gt
-	imap <C-4> <Esc>4gt
-	map  <C-5> 5gt
-	imap <C-5> <Esc>5gt
-	map  <C-6> 6gt
-	imap <C-6> <Esc>6gt
-	map  <C-7> 7gt
-	imap <C-7> <Esc>7gt
-	map  <C-8> 8gt
-	imap <C-8> <Esc>8gt
-	map  <C-9> 9gt
-	imap <C-9> <Esc>9gt
 endif
 
 
