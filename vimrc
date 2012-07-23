@@ -10,16 +10,14 @@ if has("gui_running")
 	if has("gui_win32")
 		" gvim/win32 fails to do this automatically
 		source $VIMRUNTIME/mswin.vim
-		set guifont=Consolas:h10:cANSI
-		set background=dark
+		set guifont=Consolas:h10
 	else
-		set guifont=Inconsolata:h14
-		set background=light
+		set guifont=Inconsolata\ Medium\ 12
 	endif
-else
-	set background=dark
 endif
 
+set background=dark
+set guioptions-=T " Hide toolbar
 
 if has("win32")
 	cd $USERPROFILE " Default cwd is System32, which is stupid
