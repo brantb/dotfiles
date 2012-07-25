@@ -83,6 +83,7 @@ PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;PS1="${EXITCOLOR}[${PS1_H
 # Environment variables for interactive shells
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+export GIT_PS1_SHOWUPSTREAM="verbose"
 
 # Aliases and commands
 alias ls='ls -F'
