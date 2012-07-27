@@ -136,6 +136,10 @@ else
 	vmap <A-j> ]e==gv
 endif
 
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S>		:update<CR>
+vnoremap <C-S>		<C-C>:update<CR>
+inoremap <C-S>		<C-O>:update<CR>
 
 " jj/kk exits insert mode
 inoremap jj <Esc> 
