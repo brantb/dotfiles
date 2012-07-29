@@ -93,7 +93,6 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias screensaver="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine &"
 alias brewup='brew update && brew upgrade && brew cleanup'
 alias cdf='cd "$(osascript -e "tell application \"Finder\" to if window 1 exists then if target of window 1 as string is not \":\" then get POSIX path of (target of window 1 as alias)")"'
-alias whatismyip='curl http://whatismyip.org/ && echo'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
