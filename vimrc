@@ -55,6 +55,9 @@ set statusline=[%l,%v\ %P%M]\ %f\ %y%r%w[%{&ff}]%{fugitive#statusline()}\ %b\ 0x
 autocmd BufLeave,FocusLost *.taskpaper w
 autocmd Filetype taskpaper set background=light
 
+" Source the vimrc file after saving it
+autocmd BufWritePost .vimrc source $MYVIMRC
+
 " Run wrapwithtag.vim script when opening html docs (shouldn't this be a
 " filetype plugin? meh.)
 autocmd Filetype html,xml,aspvbs runtime scripts/wrapwithtag.vim
