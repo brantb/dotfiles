@@ -11,6 +11,8 @@ if has("gui_running")
 		" gvim/win32 fails to do this automatically
 		source $VIMRUNTIME/mswin.vim
 		set guifont=Consolas:h10
+	elseif has("mac")
+		set guifont=Inconsolata:h14
 	else
 		set guifont=Inconsolata\ Medium\ 12
 	endif
