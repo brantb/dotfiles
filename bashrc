@@ -34,6 +34,9 @@ _set_git_prompt_string() {
         PS1_GIT="$(__git_ps1)"
     fi 
 }
+_set_title() {
+	printf "\033]2$1\033\\"
+}
 
 # Paths and environment variables for non-interactive shells
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
@@ -78,7 +81,10 @@ if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
 else
     PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
 fi
-PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
+PROMPT_COMMAND='_set_exit_color;\
+	_set_git_prompt_string;\
+	PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} ";\
+	_set_title ${HOSTNAME%%.*}:${PWD/$HOME/\~}'
 
 # Environment variables for interactive shells
 export CLICOLOR=1
