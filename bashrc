@@ -35,7 +35,7 @@ _set_git_prompt_string() {
     fi 
 }
 _set_title() {
-	printf "\033]2$1\033\\"
+	echo -ne "\033]2;$1\007"
 }
 
 # Paths and environment variables for non-interactive shells
