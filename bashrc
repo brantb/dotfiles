@@ -85,10 +85,10 @@ fi
 
 # Prompt
 MAX_WD_LENGTH="50"
-PROMPT_COMMAND='_set_exit_color;\
-	_set_git_prompt_string;\
-	_set_ps1_hostname;\
-	PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} ";\
+PROMPT_COMMAND='_set_exit_color;
+	_set_git_prompt_string;
+	_set_ps1_hostname\
+	PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} ";
 	_set_title ${HOSTNAME%%.*}:${PWD/$HOME/\~}'
 
 # Environment variables for interactive shells
