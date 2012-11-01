@@ -1,4 +1,32 @@
 # Internal commands
+# Color definitions (Comments refer to Solarized color)
+C_DEFAULT="\[\033[m\]"
+C_BLACK="\[\033[30m\]"			# base02
+C_RED="\[\033[31m\]"			# red
+C_GREEN="\[\033[32m\]"			# green
+C_YELLOW="\[\033[33m\]"			# yellow
+C_BLUE="\[\033[34m\]"			# blue
+C_MAGENTA="\[\033[35m\]"		# magenta
+C_CYAN="\[\033[36m\]"			# cyan
+C_WHITE="\[\033[37m\]"			# base2
+C_BRBLACK="\[\033[1;30m\]"		# base03
+C_BRRED="\[\033[1;31m\]"		# orange
+C_BRGREEN="\[\033[1;32m\]"		# base01
+C_BRYELLOW="\[\033[1;33m\]"		# base00
+C_BRBLUE="\[\033[1;34m\]"		# base0
+C_BRMAGENTA="\[\033[1;35m\]"	# violet
+C_BRCYAN="\[\033[1;36m\]"		# base1
+C_BRWHITE="\[\033[1;37m\]"		# base3
+# Background colors (No bright versions, not supported :()
+C_BG_BLACK="\[\033[40m\]"		# base02
+C_BG_RED="\[\033[41m\]"			# red
+C_BG_GREEN="\[\033[42m\]"		# green
+C_BG_YELLOW="\[\033[43m\]"		# yellow
+C_BG_BLUE="\[\033[44m\]"		# blue
+C_BG_MAGENTA="\[\033[45m\]"		# magenta
+C_BG_CYAN="\[\033[46m\]"		# cyan
+C_BG_WHITE="\[\033[47m\]"		# base2
+
 _path_add() {
     # Adds a directory to $PATH, but only if it isn't already present.
     # http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there/39995#39995
@@ -29,6 +57,13 @@ _command_exists() {
 _set_exit_color() {
     if [[ $? != "0" ]]; then EXITCOLOR=$C_RED; else EXITCOLOR=$C_GREEN; fi
 }
+_set_ps1_hostname() {
+	if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
+		PS1_HOSTNAME=
+	else
+		PS1_HOSTNAME="$(whoami)@${C_YELLOW}${HOSTNAME}${EXITCOLOR}:"
+	fi
+}
 _set_git_prompt_string() {
     if type -t __git_ps1 &> /dev/null; then
         PS1_GIT="$(__git_ps1)"
@@ -39,7 +74,8 @@ _set_title() {
 }
 
 # Paths and environment variables for non-interactive shells
-PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
+# These REALLY need to come first, which is why we don't use _path_add() like below
+PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]
@@ -47,42 +83,11 @@ then
   return
 fi
 
-# Prompt: define colors
-C_DEFAULT="\[\033[m\]"
-C_WHITE="\[\033[1m\]"
-C_BLACK="\[\033[30m\]"
-C_RED="\[\033[31m\]"
-C_GREEN="\[\033[32m\]"
-C_YELLOW="\[\033[33m\]"
-C_BLUE="\[\033[34m\]"
-C_PURPLE="\[\033[35m\]"
-C_CYAN="\[\033[36m\]"
-C_LIGHTGRAY="\[\033[37m\]"
-C_DARKGRAY="\[\033[1;30m\]"
-C_LIGHTRED="\[\033[1;31m\]"
-C_LIGHTGREEN="\[\033[1;32m\]"
-C_LIGHTYELLOW="\[\033[1;33m\]"
-C_LIGHTBLUE="\[\033[1;34m\]"
-C_LIGHTPURPLE="\[\033[1;35m\]"
-C_LIGHTCYAN="\[\033[1;36m\]"
-C_BG_BLACK="\[\033[40m\]"
-C_BG_RED="\[\033[41m\]"
-C_BG_GREEN="\[\033[42m\]"
-C_BG_YELLOW="\[\033[43m\]"
-C_BG_BLUE="\[\033[44m\]"
-C_BG_PURPLE="\[\033[45m\]"
-C_BG_CYAN="\[\033[46m\]"
-C_BG_LIGHTGRAY="\[\033[47m\]"
-
-# Prompt: Set variables
+# Prompt
 MAX_WD_LENGTH="50"
-if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
-    PS1_HOSTNAME=
-else
-    PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
-fi
 PROMPT_COMMAND='_set_exit_color;\
 	_set_git_prompt_string;\
+	_set_ps1_hostname;\
 	PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} ";\
 	_set_title ${HOSTNAME%%.*}:${PWD/$HOME/\~}'
 
