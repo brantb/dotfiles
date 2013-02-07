@@ -28,4 +28,7 @@ ln -s $DOTFILES/dircolors/dircolors.ansi-dark ~/.dir_colors
 
 git submodule update --init
 
+# vim-instant-markdown requires node and rubygems:
+# gem install redcarpet pygments.rb
+# npm install -g instant-markdown-d
 
