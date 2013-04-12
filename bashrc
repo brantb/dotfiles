@@ -96,6 +96,12 @@ export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export GIT_PS1_SHOWUPSTREAM="verbose"
 
+# Turn off ctrl+s
+stty ixany
+stty ixoff -ixon
+stty stop undef
+stty start undef
+
 # Aliases and commands
 alias ls='ls -F'
 alias v='ls -ahlO'
@@ -125,6 +131,7 @@ extract () {
             *.tbz2)     tar xjf $1      ;;
             *.tgz)      tar xzf $1      ;;
             *.zip)      unzip $1        ;;
+            *.war)      unzip $1        ;;
             *.Z)        uncompress $1   ;;
             *)          echo "'$1' cannot be extracted via extract()" ;;
     esac
