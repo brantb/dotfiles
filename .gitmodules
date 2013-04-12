@@ -99,9 +99,6 @@
 [submodule "vim/bundle/vim-ps1"]
 	path = vim/bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1.git
-[submodule "vim/bundle/vim-instant-markdown"]
-	path = vim/bundle/vim-instant-markdown
-	url = https://github.com/suan/vim-instant-markdown.git
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
