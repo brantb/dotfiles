@@ -17,10 +17,6 @@
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 	ignore = untracked
-[submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim
-	ignore = untracked
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
@@ -84,30 +80,40 @@
 [submodule "vim/bundle/vim-snipmate"]
 	path = vim/bundle/vim-snipmate
 	url = http://github.com/garbas/vim-snipmate.git
+	ignore = untracked
 [submodule "vim/bundle/tlib_vim"]
 	path = vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
+	ignore = untracked
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+	ignore = untracked
 [submodule "vim/bundle/vim-snippets"]
 	path = vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+	ignore = untracked
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+	ignore = untracked
 [submodule "vim/bundle/vim-ps1"]
 	path = vim/bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1.git
+	ignore = untracked
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+	ignore = untracked
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+	ignore = untracked
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+	ignore = untracked
 [submodule "vim/bundle/vim-cucumber"]
 	path = vim/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber
+	ignore = untracked
