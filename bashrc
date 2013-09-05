@@ -139,14 +139,14 @@ extract () {
         echo "'$1' is not a valid file"
     fi
 }
-if _command_exists hub; then
-	`hub alias -s bash`
-fi
-
 # Show the fortune while we set up other things
 if _command_exists fortune && [ "$TERM_PROGRAM" != "DTerm" ]; then
 	fortune
 	echo
+fi
+
+if _command_exists hub; then
+	`hub alias -s bash`
 fi
 
 if [ -f /usr/local/etc/bash_completion ]; then
@@ -156,6 +156,9 @@ elif [ -f /etc/bash_completion ]; then
 fi
 if _command_exists dircolors; then
     eval `dircolors --bourne-shell ~/.dir_colors`
+fi
+if _command_exists rbenv; then
+	eval "$(rbenv init -)"
 fi
 
 # Run local config
