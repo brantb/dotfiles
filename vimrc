@@ -193,3 +193,6 @@ let g:ctrlp_custom_ignore = {
 			\ 'dir': 'node_modules\|\.git$\|\.hg$\|\.svn$\|^CVS$'
 			\ }
 
+" CoffeeScript indentation
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
