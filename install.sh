@@ -21,6 +21,7 @@ ln -s $DOTFILES/screenrc ~/.screenrc
 # tmux
 mv ~/.tmux.conf ~/.tmux.conf.old 2> /dev/null
 ln -s $DOTFILES/tmux.conf ~/.tmux.conf
+touch ~/.tmux.conf.local
 
 # dircolors
 mv ~/.dir_colors ~/.dir_colors.old 2> /dev/null
