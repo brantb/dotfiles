@@ -43,6 +43,7 @@ set incsearch   " Incremental search
 set cursorline  " Highlight current line 
 set autoread	" Reload files that have changed
 set guioptions-=T " Hide toolbar
+set backspace=indent,eol,start  " make backspace work like everything else
 
 syntax enable
 filetype plugin indent on
