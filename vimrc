@@ -168,6 +168,9 @@ vnoremap <F10> zm
 " If there is a fold under the cursor, spacebar toggles it as well
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 
+" \c changes to directory of current file
+nnoremap <Leader>c :cd %:p:h<CR>
+
 " Indent guides plugin config
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
