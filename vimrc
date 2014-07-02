@@ -200,3 +200,5 @@ let g:ctrlp_custom_ignore = {
 " Filetype-specific indentation
 autocmd Filetype coffee setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 expandtab
+
