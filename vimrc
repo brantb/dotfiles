@@ -34,7 +34,6 @@ nnoremap <silent> <CR> :noh<CR><CR>  " Clear search highlight by hitting enter
 set number      " Show line numbers
 set foldcolumn=2
 set foldmethod=syntax
-set foldlevelstart=2
 set shiftwidth=4
 set tabstop=4
 set hlsearch    " Highlight search results
@@ -164,6 +163,13 @@ inoremap <F10> <C-O>zm
 nnoremap <F10> zm
 onoremap <F10> <C-C>zm
 vnoremap <F10> zm
+" <F11> opens all folds in the file
+inoremap <F11> <C-O>zR
+nnoremap <F11> zR
+onoremap <F11> <C-C>zR
+vnoremap <F11> zR
+" Open all folds by default
+autocmd Syntax * normal zR
 
 " If there is a fold under the cursor, spacebar toggles it as well
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
