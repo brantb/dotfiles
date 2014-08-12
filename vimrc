@@ -189,10 +189,12 @@ function! RecolorIndentGuides()
 	if &background == "dark"
 		" base02
 		:hi IndentGuidesEven guibg=#073642 ctermbg=0
+		:hi SignColumn guibg=#073642 ctermbg=0
 		:hi IndentGuidesOdd  guibg=NONE ctermbg=0
 	else
 		" base2
 		:hi IndentGuidesEven guibg=#eee8d5 ctermbg=7
+		:hi SignColumn guibg=#eee8d5 ctermbg=7
 		:hi IndentGuidesOdd  guibg=#eee8d5 ctermbg=7
 	endif
 endfunction
